@@ -37,4 +37,20 @@ public class ClientManagerClient {
                 .retrieve()
                 .bodyToMono(Clients.class);
     }
+
+    public Mono<Clients> getClientById(String id) {
+        return clientManagerClient
+                .get()
+                .uri("/clients/{id}", id)
+                .retrieve()
+                .bodyToMono(Clients.class);
+    }
+
+    public Mono<Clients> deleteClientById(String id) {
+        return clientManagerClient
+                .delete()
+                .uri("/clients/{id}", id)
+                .retrieve()
+                .bodyToMono(Clients.class);
+    }
 }
