@@ -1,13 +1,25 @@
 package io.mkth.clientmanagerpact.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class ClientDTO {
 
+    @NotNull
+    @Size(min = 5)
     private String username;
 
+    @NotNull
+    @Size(min = 5)
     private String description;
 
+    @NotNull
+    @Size(min = 5)
     private String team;
 
+    @NotNull
+    @Size(min = 5)
     private String owner;
 
     public ClientDTO(String username, String description, String team, String owner) {
